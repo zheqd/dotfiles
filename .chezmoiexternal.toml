@@ -1,0 +1,5 @@
+[".oh-my-zsh/custom/plugins/songwhip"]
+    type = "archive"
+    url = "https://github.com/zheqd/songwhip/archive/main.zip"
+    exact = true
+    stripComponents = 1

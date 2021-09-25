@@ -1,0 +1,6 @@
+syntax enable
+filetype on
+set autoindent
+set clipboard=unnamedplus
+set nocompatible
+set splitbelow

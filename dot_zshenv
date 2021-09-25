@@ -1,0 +1,19 @@
+export HISTFILE=~/.zsh_history
+export HSTR_CONFIG=hicolor
+export EDITOR=/usr/local/bin/vi
+export ZSH=/Users/zheqd/.oh-my-zsh
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_OPTS="-server -XX:+UseCompressedOops -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true"
+
+export PATH="/usr/local/Cellar/lxc/4.0.1/bin:$PATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH="/usr/local/opt/libarchive/bin:$PATH"
+export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+export PATH=$JAVA_HOME/bin:$PATH
+
+# IM related
+export NEXUS_URL=http://nexus01.int.zone:8081
+export SITE_BINREPO=http://binrepo.int.zone
+export envClassifier=RHEL7

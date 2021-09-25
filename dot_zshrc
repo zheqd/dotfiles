@@ -1,0 +1,52 @@
+ZSH_THEME="gallois"
+plugins=(
+	copyfile
+	copydir
+	copybuffer
+	jsontools
+	dirhistory
+	git 
+	colored-man-pages 
+	colorize 
+	github 
+	virtualenv
+	pip 
+	python 
+	brew 
+	osx 
+	zsh-syntax-highlighting
+	songwhip
+	spconfig
+	gnu-utils 
+	helm
+	kubectl )
+source $ZSH/oh-my-zsh.sh
+
+alias zshconfig="vim ~/.zshrc && source ~/.zshrc"
+
+function deploy-cli() {
+        ep="${1:-/bin/zsh}"
+        shift 1
+        docker run --rm -it -v `pwd`:/conf -v ~/.kube/config:/root/.kube/config --entrypoint=$ep a8n-docker-stable.repo.int.zone/platform-core/helmfile-deploy:master $*
+}
+function deploy-core () {env JHOST="$@" mvn -f $OSA_HOME/modules/platform/u/ pre-integration-test}
+function getStackIds () { ssh root@"$@" prlctl list -a -o description | sort -u -k 1,1.70 | grep -o -P '(?<=Stack ID: ).*(?= HWNode)'; }
+
+alias mvn-aps="mvn clean install -Dauto=$APSCV -f /Users/zheqd/Projects/osa-ed/modules/aps/e2e-tests-v2/pom.xml"
+alias mvn-b="mvn clean install -Dauto=$BSSCV -f /Users/zheqd/Projects/osa-ed/modules/billing/e2e-tests-v2/pom.xml"
+alias mvn-p="mvn clean install -Dauto=$PCV -f /Users/zheqd/Projects/odin/osa-ed/modules/platform/e2e-tests-v2/pom.xml"
+alias getVersions='cat ~/Projects/osa-ed/poa/versions.txt | grep "platformVersion\|billingVersion\|apsVersion"'
+alias git-cleanup='git branch | egrep -v "(master|\*|\unstable)" | xargs git branch -D'
+alias git-cleanup-remote='git branch -a | egrep -v "(master|\*|\unstable)" | xargs git push origin --delete ssh://git@git.int.zone/~edrozdov/osa-ed.git'
+alias clean-it-ng='ssh root@10.26.157.194 "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)"'
+alias tailf='tail -f'
+alias dnsclear='sudo killall -HUP mDNSResponder'
+alias sourcez='source ~/.zshrc'
+alias javalist='/usr/libexec/java_home -V'
+
+alias itng-build-ct='mvn package -DDOCKER_ENGINE=$DE'
+alias itng-start-ct='mvn -f EAR/core-it-ng/pom.xml -DDOCKER_ENGINE=$DE -P CORE_IT_NG pre-integration-test'
+alias python3='/usr/local/opt/python@3/libexec/bin/python'
+
+alias hh=hstr
+bindkey -s "\C-r" "\eqhstr\n"
