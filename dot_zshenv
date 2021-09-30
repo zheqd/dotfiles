@@ -20,3 +20,8 @@ export PATH=$JAVA_HOME/bin:$PATH
 export NEXUS_URL=http://nexus01.int.zone:8081
 export SITE_BINREPO=http://binrepo.int.zone
 export envClassifier=RHEL7
+## node12
+export PATH="/usr/local/opt/node@12/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@12/lib"
+export CPPFLAGS="-I/usr/local/opt/node@12/include"
+
