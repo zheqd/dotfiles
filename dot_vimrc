@@ -1,6 +1,7 @@
 syntax enable
 filetype on
 set autoindent
+set backspace=indent,eol,start
 set clipboard=unnamedplus
 set nocompatible
 set splitbelow
