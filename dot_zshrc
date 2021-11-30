@@ -13,7 +13,7 @@ plugins=(
 	pip 
 	python 
 	brew 
-	osx 
+	macos 
 	zsh-syntax-highlighting
 	songwhip
 	spconfig
