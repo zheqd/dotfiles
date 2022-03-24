@@ -1,7 +1,7 @@
 ZSH_THEME="gallois"
 plugins=(
 	copyfile
-	copydir
+	copypath
 	copybuffer
 	jsontools
 	dirhistory
@@ -29,15 +29,23 @@ function deploy-cli() {
         shift 1
         docker run --rm -it -v `pwd`:/conf -v ~/.kube/config:/root/.kube/config --entrypoint=$ep a8n-docker-stable.repo.int.zone/platform-core/helmfile-deploy:master $*
 }
+export MINIKUBE_IP=10.28.69.1
 function deploy-core () {env JHOST="$@" mvn -f $OSA_HOME/modules/platform/u/ pre-integration-test}
 function getStackIds () { ssh root@"$@" prlctl list -a -o description | sort -u -k 1,1.70 | grep -o -P '(?<=Stack ID: ).*(?= HWNode)'; }
+
+function cnc-copy-config () { docker cp  ~/Projects/helm/product.yaml deploy:/config.yaml }
+function hf-deploy () { docker exec -ti deploy setup-product.sh -f /config.yaml -n "$1" }
+function hf-test ()   { docker exec -ti deploy setup-product.sh -f /config.yaml -n "$1" --e2ev2}
+function hf-context ()   { docker exec -ti deploy kubectl config get-contexts}
+function cnc-deploy () { cnc-copy-config "$1" && hf-deploy "$2"}
+function cnc-deploy-test () {cnc-copy-config "$1" && hf-deploy "$2" && hf-test "$2"}
 
 alias mvn-aps="mvn clean install -Dauto=$APSCV -f /Users/zheqd/Projects/osa-ed/modules/aps/e2e-tests-v2/pom.xml"
 alias mvn-b="mvn clean install -Dauto=$BSSCV -f /Users/zheqd/Projects/osa-ed/modules/billing/e2e-tests-v2/pom.xml"
 alias mvn-p="mvn clean install -Dauto=$PCV -f /Users/zheqd/Projects/odin/osa-ed/modules/platform/e2e-tests-v2/pom.xml"
-alias getVersions='cat ~/Projects/osa-ed/poa/versions.txt | grep "platformVersion\|billingVersion\|apsVersion"'
+alias getVersions='cat ~/Projects/osa/poa/versions.txt | grep "platformVersion\|billingVersion\|apsVersion"'
 alias git-cleanup='git branch | egrep -v "(master|\*|\unstable)" | xargs git branch -D'
-alias git-cleanup-remote='git branch -a | egrep -v "(master|\*|\unstable)" | xargs git push origin --delete ssh://git@git.int.zone/~edrozdov/osa-ed.git'
+alias git-cleanup-remote='git branch -a | egrep -v "(master|\*|\unstable)" | xargs git push origin --delete ssh://git@git.int.zone/~eoktyabrskiy/osa-ed.git'
 alias clean-it-ng='ssh root@10.26.157.194 "docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)"'
 alias tailf='tail -f'
 alias dnsclear='sudo killall -HUP mDNSResponder'
