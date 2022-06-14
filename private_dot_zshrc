@@ -16,8 +16,7 @@ plugins=(
 	macos 
 	zsh-syntax-highlighting
 	songwhip
-	spconfig
-	gnu-utils 
+	gnu-utils
 	helm
 	kubectl )
 source $ZSH/oh-my-zsh.sh

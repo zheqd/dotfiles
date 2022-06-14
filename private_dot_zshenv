@@ -2,8 +2,9 @@ export HISTFILE=~/.zsh_history
 export HSTR_CONFIG=hicolor
 export EDITOR=/usr/local/bin/vi
 export ZSH=/Users/zheqd/.oh-my-zsh
+export PYTHON=/usr/local/opt/python@3/libexec/bin/python
 
-export SW_OUTPUT=hyphen  
+export SW_OUTPUT=hyphen
 export SW_SERVICES="Yandex,Apple Music,YouTube,Spotify"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -15,13 +16,14 @@ export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/libarchive/bin:$PATH"
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 export PATH=$JAVA_HOME/bin:$PATH
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
 
 # IM related
 export NEXUS_URL=http://nexus01.int.zone:8081
 export SITE_BINREPO=http://binrepo.int.zone
 export envClassifier=RHEL7
-## node12
-export PATH="/usr/local/opt/node@12/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/node@12/lib"
-export CPPFLAGS="-I/usr/local/opt/node@12/include"
-
+## node14
+export PATH="/usr/local/opt/node@14/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@14/lib"
+export CPPFLAGS="-I/usr/local/opt/node@14/include"

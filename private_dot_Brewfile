@@ -1,0 +1,46 @@
+# Binaries
+brew 'zsh' # Latest Bash version
+brew 'hstr'
+brew 'htop'
+brew 'coreutils' # Those that come with macOS are outdated
+brew 'ffmpeg'
+brew 'git'
+brew 'grep'
+brew 'vim'
+brew 'mas' # Mac App Store manager
+brew 'mackup'
+brew 'chezmoi'
+
+# Development
+brew 'node'
+brew 'yarn'
+brew 'kubectl'
+brew 'helm'
+brew 'maven'
+brew 'maven-completion'
+brew 'openjdk@11'
+
+# Apps
+cask 'adobe-creative-cloud'
+cask 'docker'
+cask 'jetbrains-toolbox'
+cask 'google-chrome'
+cask 'microsoft-teams'
+cask 'microsoft-outlook'
+cask 'microsoft-word'
+cask 'insomnia'
+cask 'iterm2'
+cask 'pastebot'
+cask 'keka'
+cask 'telegram-desktop'
+cask 'the-unarchiver'
+cask 'visual-studio-code'
+cask 'zoom'
+
+# Quicklook
+cask 'qlmarkdown'
+cask 'quicklook-json'
+
+# Mac App Store
+#mas 'Spark', id: 1176895641
+mas 'Better Snap Tool', id: 417375580
