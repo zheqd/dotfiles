@@ -1,13 +1,13 @@
 export HISTFILE=~/.zsh_history
 export HSTR_CONFIG=hicolor
-export EDITOR=/usr/local/bin/vi
+export EDITOR=/opt/homebrew/bin/vim
 export ZSH=/Users/zheqd/.oh-my-zsh
 export PYTHON=/usr/local/opt/python@3/libexec/bin/python
 
 export SW_OUTPUT=hyphen
 export SW_SERVICES="Yandex,Apple Music,YouTube,Spotify"
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
 export JAVA_OPTS="-server -XX:+UseCompressedOops -Xms64m -Xmx512m -XX:MaxPermSize=256m -Djava.net.preferIPv4Stack=true -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true"
 
 export PATH="/usr/local/Cellar/lxc/4.0.1/bin:$PATH"

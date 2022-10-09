@@ -45,3 +45,4 @@ cask 'quicklook-json'
 # Mac App Store
 #mas 'Spark', id: 1176895641
 mas 'Better Snap Tool', id: 417375580
+
