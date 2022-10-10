@@ -11,7 +11,7 @@ brew 'chezmoi'
 brew 'zsh-syntax-highlighting'
 
 # Development
-brew 'node'
+brew 'node@16'
 brew 'yarn'
 brew 'kubectl'
 brew 'helm'

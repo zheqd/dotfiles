@@ -7,7 +7,7 @@ export PYTHON=/usr/local/opt/python@3/libexec/bin/python
 export SW_OUTPUT=hyphen
 export SW_SERVICES="Yandex,Apple Music,YouTube,Spotify"
 
-export JAVA_HOME=`/usr/libexec/java_home -v 17`
+export JAVA_HOME=`/usr/libexec/java_home -v 11`
 
 export PATH="/usr/local/Cellar/lxc/4.0.1/bin:$PATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
