@@ -21,6 +21,8 @@ export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
 
 # IM related
 export REPO_HOST=repo.com.int.zone
+export REPO_USER=anonymous
+export REPO_PASSWORD=1q2w3e
 export SITE_BINREPO=http://binrepo.int.zone
 export envClassifier=RHEL7
 ## node14

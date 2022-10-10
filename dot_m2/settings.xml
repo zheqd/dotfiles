@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <proxies>
+  </proxies>
+
+  <interactiveMode>false</interactiveMode>
+
+  <servers>
+    <server>
+      <id>snapshots</id>
+      <username>${env.REPO_USER}</username>
+      <password>${env.REPO_PASSWORD}</password>
+    </server>
+
+   <server>
+      <id>releases</id>
+      <username>${env.REPO_USER}</username>
+      <password>${env.REPO_PASSWORD}</password>
+    </server>
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <!-- This sends everything to /parallels -->
+      <!-- Repository group should include at least 3 repos - snapshots, releases, central -->
+      <id>parallels</id>
+      <mirrorOf>external:*</mirrorOf>
+      <url>https://${env.REPO_HOST}/artifactory/mvn/</url>
+    </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>parallels</id>
+
+      <properties>
+         <REPO_HOST>${env.REPO_HOST}</REPO_HOST>
+         <DOCKER_ENGINE>192.168.100.6</DOCKER_ENGINE>
+	 <DOCKER_PORT>2375</DOCKER_PORT>
+         <helmDownloadUrl>https://get.helm.sh/helm-v3.9.4-darwin-arm64.tar.gz</helmDownloadUrl>
+      </properties>
+
+     <repositories>
+        <repository>
+          <id>snapshots</id>
+          <url>http://parallels</url>
+          <releases><enabled>false</enabled></releases>
+          <snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy></snapshots>
+        </repository>
+        <repository>
+          <id>releases</id>
+          <url>http://parallels</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>interval:2</updatePolicy>
+          </releases>
+          <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+      </repositories>
+
+      <pluginRepositories>
+        <pluginRepository>
+          <id>snapshots</id>
+          <url>http://parallels</url>
+          <releases><enabled>false</enabled></releases>
+          <snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy></snapshots>
+        </pluginRepository>
+        <pluginRepository>
+          <id>releases</id>
+          <url>http://parallels</url>
+          <releases><enabled>true</enabled></releases>
+          <snapshots><enabled>false</enabled></snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>parallels</activeProfile>
+  </activeProfiles>
+
+  <pluginGroups>
+    <pluginGroup>com.parallels.poa.maven.plugins</pluginGroup>
+  </pluginGroups>
+</settings>
