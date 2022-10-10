@@ -24,6 +24,7 @@ export REPO_HOST=repo.com.int.zone
 export REPO_USER=anonymous
 export REPO_PASSWORD=1q2w3e
 export SITE_BINREPO=http://binrepo.int.zone
+export BINREPO_BASE_URL="https://${REPO_HOST}/artifactory/bin"
 export envClassifier=RHEL7
 ## node14
 export PATH="/usr/local/opt/node@14/bin:$PATH"
