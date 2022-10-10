@@ -9,14 +9,14 @@
   <servers>
     <server>
       <id>snapshots</id>
-      <username>${env.REPO_USER}</username>
-      <password>${env.REPO_PASSWORD}</password>
+      <username>$REPO_USER</username>
+      <password>$REPO_PASSWORD</password>
     </server>
 
    <server>
       <id>releases</id>
-      <username>${env.REPO_USER}</username>
-      <password>${env.REPO_PASSWORD}</password>
+      <username>$REPO_USER</username>
+      <password>$REPO_PASSWORD</password>
     </server>
   </servers>
 
@@ -35,8 +35,8 @@
       <id>parallels</id>
 
       <properties>
-         <REPO_HOST>${env.REPO_HOST}</REPO_HOST>
-         <DOCKER_ENGINE>192.168.100.6</DOCKER_ENGINE>
+         <REPO_HOST>${REPO_HOST}</REPO_HOST>
+         <DOCKER_ENGINE>10.172.4.15</DOCKER_ENGINE>
 	 <DOCKER_PORT>2375</DOCKER_PORT>
          <helmDownloadUrl>https://get.helm.sh/helm-v3.9.4-darwin-arm64.tar.gz</helmDownloadUrl>
       </properties>
