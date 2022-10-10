@@ -3,12 +3,10 @@ brew 'zsh' # Latest Bash version
 brew 'hstr'
 brew 'htop'
 brew 'coreutils' # Those that come with macOS are outdated
-brew 'ffmpeg'
 brew 'git'
 brew 'grep'
 brew 'vim'
 brew 'mas' # Mac App Store manager
-brew 'mackup'
 brew 'chezmoi'
 brew 'zsh-syntax-highlighting'
 
@@ -22,8 +20,10 @@ brew 'maven-completion'
 brew 'openjdk@11'
 
 # Apps
+cask 'alfred'
 cask 'adobe-creative-cloud'
 cask 'docker'
+cask 'fig'
 cask 'jetbrains-toolbox'
 cask 'google-chrome'
 cask 'microsoft-teams'
@@ -43,6 +43,4 @@ cask 'qlmarkdown'
 cask 'quicklook-json'
 
 # Mac App Store
-#mas 'Spark', id: 1176895641
-mas 'Better Snap Tool', id: 417375580
-
+#mas 'Better Snap Tool', id: 417375580
