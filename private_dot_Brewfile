@@ -35,6 +35,7 @@ cask 'pastebot'
 cask 'keka'
 cask 'telegram-desktop'
 cask 'the-unarchiver'
+cask 'shottr'
 cask 'visual-studio-code'
 cask 'zoom'
 
