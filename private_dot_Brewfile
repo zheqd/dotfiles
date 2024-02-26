@@ -17,7 +17,7 @@ brew 'kubectl'
 brew 'helm'
 brew 'maven'
 brew 'maven-completion'
-brew 'openjdk@11'
+brew 'openjdk@17'
 
 # Apps
 cask 'alfred'
