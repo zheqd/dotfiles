@@ -1,5 +1,5 @@
 # Binaries
-brew 'zsh' # Latest Bash version
+brew 'zsh'
 brew 'hstr'
 brew 'htop'
 brew 'coreutils' # Those that come with macOS are outdated
@@ -23,7 +23,6 @@ brew 'openjdk@17'
 cask 'alfred'
 cask 'adobe-creative-cloud'
 cask 'docker'
-cask 'fig'
 cask 'jetbrains-toolbox'
 cask 'google-chrome'
 cask 'microsoft-teams'
@@ -37,7 +36,6 @@ cask 'telegram-desktop'
 cask 'the-unarchiver'
 cask 'shottr'
 cask 'visual-studio-code'
-cask 'zoom'
 
 # Quicklook
 cask 'qlmarkdown'
