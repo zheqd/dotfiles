@@ -1,4 +1,5 @@
 export HISTFILE=~/.zsh_history
+export HISTSIZE=10000000
 export HSTR_CONFIG=hicolor
 export EDITOR=/opt/homebrew/bin/vim
 export ZSH=/Users/zheqd/.oh-my-zsh
@@ -7,16 +8,20 @@ export PYTHON=/usr/local/opt/python@3/libexec/bin/python
 export SW_OUTPUT=hyphen
 export SW_SERVICES="Yandex,Apple Music,YouTube,Spotify"
 
-export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_HOME=`/usr/libexec/java_home -v 17`
+export DEFAULT_MVN_VERSION=3.6.1
 
 export PATH="/usr/local/Cellar/lxc/4.0.1/bin:$PATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/libarchive/bin:$PATH"
-export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH="/usr/local/opt/libpq/bin:$PATH"
-export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
+
+export FLASK_ENV=debug
+export FLASK_APP=dynamic_validation.py
+export LDFLAGS="-L/opt/homebrew/opt/node@16/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/node@16/include"
 
 # IM related
 export REPO_HOST=repo.com.int.zone
@@ -24,8 +29,9 @@ export REPO_USER=anonymous
 export REPO_PASSWORD=1q2w3e
 export SITE_BINREPO=http://binrepo.int.zone
 export BINREPO_BASE_URL="https://${REPO_HOST}/artifactory/bin"
-export envClassifier=RHEL7
-## node14
-export PATH="/usr/local/opt/node@14/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/node@14/lib"
-export CPPFLAGS="-I/usr/local/opt/node@14/include"
+export CONNECT_API_KEY="ApiKey SU-752-024-109:1ec354bcb2ff4d239b0b48fb384c2f9fb1350a4d"
+export dockerImageRepository="a8n-docker.${REPO_HOST}"
+export wildFlyPersistenceImageName="odin-ext/aps2java-wildfly-persistence-openjdk-17"
+export skeletonImageTag="4.0.4"
+export MAVEN_OPTS=" -Dorg.slf4j.simpleLogger.showThreadName=true"
+#export envClassifier=RHEL7
